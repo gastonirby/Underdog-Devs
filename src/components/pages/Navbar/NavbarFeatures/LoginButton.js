@@ -3,11 +3,9 @@ import { NavBtnLink } from '../../NavBarLanding/NavBarStyle';
 import { useAuth0 } from '@auth0/auth0-react';
 
 function LoginButton() {
-  return (
-    <NavBtnLink to={`/login`} key="login">
-      Login
-    </NavBtnLink>
-  );
+  const { loginWithRedirect } = useAuth0();
+
+  return <NavBtnLink onClick={() => loginWithRedirect()}>Login</NavBtnLink>;
 }
 
 export default LoginButton;
