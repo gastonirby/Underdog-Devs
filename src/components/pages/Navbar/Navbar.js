@@ -12,11 +12,13 @@ import { useOktaAuth } from '@okta/okta-react';
 import { getProfile } from '../../../state/actions/userProfile/getProfile';
 import LoginButton from './NavbarFeatures/LoginButton';
 import SignupButton from './NavbarFeatures/SignupButton';
+import Logoutbutton from './NavbarFeatures/Logoutbutton';
 import { useAuth0 } from '@auth0/auth0-react';
 
 const { Header } = Layout;
 
-const Navbar = ({ isAuthenticated, userProfile, getProfile }) => {
+const Navbar = ({ userProfile, getProfile }) => {
+  const { isAuthenticated } = useAuth0();
   const [profilePic] = useState('https://joeschmoe.io/api/v1/random');
   const [user, setUser] = useState({});
   const { authService } = useOktaAuth();
@@ -108,11 +110,13 @@ const Navbar = ({ isAuthenticated, userProfile, getProfile }) => {
                 </Dropdown>
               </div>
             )}
-
-            <div className="header_buttons">
-              <LoginButton />
-              <SignupButton />
-            </div>
+            {!isAuthenticated && (
+              <div className="header_buttons">
+                <LoginButton />
+                <SignupButton />
+                <Logoutbutton />
+              </div>
+            )}
           </div>
         </Header>
       </Layout>
@@ -131,7 +135,7 @@ const Navbar = ({ isAuthenticated, userProfile, getProfile }) => {
 
 const mapStateToProps = state => {
   return {
-    isAuthenticated: localStorage.getItem('token'),
+    // isAuthenticated: localStorage.getItem('token'),
     userProfile: state.user.userProfile,
   };
 };
