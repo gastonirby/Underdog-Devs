@@ -62,6 +62,8 @@ ReactDOM.render(
           domain={domain}
           clientId={clientId}
           redirectUri={window.location.origin}
+          audience="underdog-identifier"
+          scope="openid profile email"
         >
           <App />
         </Auth0Provider>
