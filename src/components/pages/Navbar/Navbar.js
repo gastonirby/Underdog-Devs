@@ -41,6 +41,7 @@ const Navbar = ({ userProfile, getProfile }) => {
         setUser(user.data);
         getProfile(user.data.profile_id);
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAuthenticated]);
 
   if (!user) {
@@ -77,7 +78,7 @@ const Navbar = ({ userProfile, getProfile }) => {
               <div className="userInfo-and-profilePic">
                 <Link
                   key="memosLinkNav"
-                  to="/notes"
+                  to="/memos"
                   style={{ color: '#FFF' }}
                   className="memos"
                 >

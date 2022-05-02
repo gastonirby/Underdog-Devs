@@ -64,13 +64,12 @@ const Mentee = ({ dispatch, error, successPage }) => {
         console.error(err);
       });
 
-    console.log('USE EFFECT: ', formValues);
-
     if (successPage) {
       history.pushState(successPage);
     } else if (error) {
       console.error(error);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [successPage, error, history]);
 
   const formSubmit = () => {
@@ -251,6 +250,7 @@ const Mentee = ({ dispatch, error, successPage }) => {
                         ]}
                       >
                         <Select
+                          showSearch
                           placeholder="- Select -"
                           onChange={e => handleChange(e, 'select', 'state')}
                         >

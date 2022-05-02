@@ -4,7 +4,13 @@ import { NavBtnLink } from '../../NavBarLanding/NavBarStyle';
 
 function Logoutbutton() {
   const { logout } = useAuth0();
-  return <NavBtnLink onClick={() => logout()}>Logout</NavBtnLink>;
+
+  const logoutAuth = () => {
+    localStorage.removeItem('AuthToken');
+    logout();
+  };
+
+  return <NavBtnLink onClick={logoutAuth}>Logout</NavBtnLink>;
 }
 
 export default Logoutbutton;
