@@ -6,6 +6,7 @@ import { authenticateUser } from '../../state/actions/auth/authenticateUser';
 import { getProfile } from '../../state/actions/userProfile/getProfile';
 import Sidebar from './Sidebar/Sidebar';
 import LoadingComponent from './LoadingComponent';
+import { useAuth0 } from '@auth0/auth0-react';
 
 const PrivateRoute = ({
   component: Component,
@@ -20,7 +21,8 @@ const PrivateRoute = ({
 }) => {
   const { push } = useHistory();
   const { authState, authService } = useOktaAuth();
-  console.log(authState, authService);
+  const { user } = useAuth0;
+  console.log(user);
   const [loading, setLoading] = useState(true); // hiding contents
 
   useEffect(() => {
