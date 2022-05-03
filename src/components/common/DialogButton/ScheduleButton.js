@@ -70,4 +70,4 @@ const SwitchablePicker = () => {
   );
 };
 
-export default () => <SwitchablePicker />;
+export default SwitchablePicker;
