@@ -39,7 +39,7 @@ const initialFormValues = {
   country: '',
   current_company: '',
   current_position: '',
-  subject: '',
+  subject: 'can NOT be null!',
   experience_level: '',
   job_help: false,
   industry_knowledge: false,
