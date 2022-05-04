@@ -21,8 +21,10 @@ const PrivateRoute = ({
 }) => {
   const { push } = useHistory();
   const { authState, authService } = useOktaAuth();
-  const { user } = useAuth0;
-  console.log(user);
+  const { user, isLoading } = useAuth0();
+  console.log(user, isLoading);
+  console.log(authState);
+  console.log(authService);
   const [loading, setLoading] = useState(true); // hiding contents
 
   useEffect(() => {
