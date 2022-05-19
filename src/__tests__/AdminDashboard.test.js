@@ -9,7 +9,7 @@
 // import Sidebar from '../components/common/Sidebar/Sidebar.js';
 
 // //TODO: Getting a warning error on the tests with overlapping act() calls
-
+// This is a pull test
 // afterEach(cleanup);
 // // creating store variable
 // let store;
