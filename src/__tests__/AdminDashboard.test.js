@@ -7,8 +7,6 @@ import { Provider } from 'react-redux';
 import SkeletonLoadingComponent from '../components/common/SkeletonLoading';
 import Sidebar from '../components/common/Sidebar/Sidebar.js';
 
-import PrivateRoute from '../components/common/PrivateRoute';
-
 // //TODO: Getting a warning error on the tests with overlapping act() calls
 
 afterEach(cleanup);
@@ -51,13 +49,13 @@ jest.mock('../state/actions/index', () => ({
   }),
 }));
 
-test('Home Container no longer exists, this entire test needs to be revisited/refactored or deleted. It was originally for the Admin Dashbaord', () => {
+test('Admin Dashboard Test Suite', () => {
   console.log('Revisit this test');
 });
 
-describe('<HomeContainer /> test suite for mentee role', () => {
+describe('Dashboard test suite for mentee role', () => {
   beforeAll(() => {
-    // have to use this because we were having problems with matchMedia, this fixed it.
+    //have to use this because we were having problems with matchMedia, this fixed it.
     Object.defineProperty(window, 'matchMedia', {
       writable: true,
       value: jest.fn().mockImplementation(query => ({
@@ -72,6 +70,7 @@ describe('<HomeContainer /> test suite for mentee role', () => {
       })),
     });
   });
+
   beforeEach(() => {
     localStorage.clear();
     // creating a mock redux store
@@ -84,10 +83,8 @@ describe('<HomeContainer /> test suite for mentee role', () => {
     act(() => {
       render(
         <Provider store={store}>
-          <PrivateRoute
-            LoadingComponent={() => <SkeletonLoadingComponent />}
-            Sidebar={() => <Sidebar />}
-          />
+          LoadingComponent={() => <SkeletonLoadingComponent />}
+          Sidebar={() => <Sidebar />}
         </Provider>
       );
     });
@@ -104,10 +101,8 @@ describe('<HomeContainer /> test suite for mentee role', () => {
     act(() => {
       render(
         <Provider store={store}>
-          <PrivateRoute
-            LoadingComponent={() => <SkeletonLoadingComponent />}
-            Sidebar={() => <Sidebar />}
-          />
+          LoadingComponent={() => <SkeletonLoadingComponent />}
+          Sidebar={() => <Sidebar />}
         </Provider>
       );
     });
@@ -168,10 +163,8 @@ describe('<HomeContainer /> test suite for mentee role', () => {
       act(() => {
         render(
           <Provider store={store}>
-            <PrivateRoute
-              LoadingComponent={() => <SkeletonLoadingComponent />}
-              Sidebar={() => <Sidebar />}
-            />
+            LoadingComponent={() => <SkeletonLoadingComponent />}
+            Sidebar={() => <Sidebar />}
           </Provider>
         );
       });
@@ -268,7 +261,7 @@ describe('<HomeContainer /> test suite for mentee role', () => {
     act(() => {
       render(
         <Provider store={store}>
-          <PrivateRoute LoadingComponent={() => <SkeletonLoadingComponent />} />
+          LoadingComponent={() => <SkeletonLoadingComponent />}
         </Provider>
       );
     });
