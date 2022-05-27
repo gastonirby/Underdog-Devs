@@ -39,7 +39,7 @@ const initialFormValues = {
   country: '',
   current_company: '',
   current_position: '',
-  tech_stack: 'React',
+  tech_stack: [],
   job_help: false,
   industry_knowledge: false,
   pair_programming: false,
@@ -453,8 +453,8 @@ const Mentor = ({ dispatch, error, successPage }) => {
                       value={formValues.commitment}
                       style={{ width: 250, margin: '0 1rem 1rem 1.5rem' }}
                     >
-                      <Radio value={'yes'}>Yes</Radio>
-                      <Radio value={'no'}>No</Radio>
+                      <Radio value={true}>Yes</Radio>
+                      <Radio value={false}>No</Radio>
                     </Radio.Group>
                   </Form.Item>
                 </Col>
