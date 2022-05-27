@@ -90,11 +90,11 @@ const RenderProfileContainer = props => {
               {/* 
               How it will look after survey adds each tech to an array on BE
               <ul>
-                {userData.tech_stack.map(tech => {
+                {userData.subject.map(tech => {
                   return <li>{tech}</li>;
                 })}
               </ul> */}
-              {userData.tech_stack}
+              {userData.subject}
             </Card>
             <Card
               style={{ marginTop: 16 }}

@@ -253,7 +253,7 @@ const ApplicationModal = ({
                 <b>Current Employer:</b> {currentApplication.current_comp}
               </List.Item>
               <List.Item>
-                <b>Tech Stack:</b> {currentApplication.tech_stack}
+                <b>Tech Stack:</b> {currentApplication.subject}
               </List.Item>
               <List.Item>
                 <b>Experience Level:</b> {currentApplication.experience_level}

@@ -36,10 +36,10 @@ const MentorMenteeMatching = () => {
   // adds commas in-between the programming languages
   const splitTechStack = obj => {
     let string = '';
-    for (let i = 0; i < obj.tech_stack.length; i++) {
-      if (i === obj.tech_stack.length - 1) {
-        string += `${obj.tech_stack[i]}`;
-      } else string += `${obj.tech_stack[i]}, `;
+    for (let i = 0; i < obj.subject.length; i++) {
+      if (i === obj.subject.length - 1) {
+        string += `${obj.subject[i]}`;
+      } else string += `${obj.subject[i]}, `;
     }
     return string;
   };

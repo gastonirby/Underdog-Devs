@@ -190,7 +190,7 @@ function EditProfile({ userInfo, setUserProfile }) {
 
           <Form.Item
             label="Tech Stack"
-            name="tech_stack"
+            name="subject"
             rules={[
               {
                 required: true,

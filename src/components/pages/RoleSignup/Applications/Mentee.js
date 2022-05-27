@@ -42,7 +42,7 @@ const initialFormValues = {
   low_income: false,
   formerly_incarcerated: false,
   list_convictions: '',
-  subject: 'not collecting this from intake form',
+  tech_stack: 'not collecting this from intake form',
   tech_stack: '',
   experience_level: '',
   job_help: false,
@@ -328,7 +328,7 @@ const Mentee = ({ dispatch, error, successPage }) => {
               <Row style={{ padding: '3% 0 3% 3%' }}>
                 <Col md={22} xs={24}>
                   <Form.Item
-                    label="What subject do you want to get mentored in?"
+                    label="What tech_stack do you want to get mentored in?"
                     tooltip={{
                       title: 'Select the title that best reflects your goals',
                       icon: <InfoCircleOutlined />,
@@ -357,7 +357,7 @@ const Mentee = ({ dispatch, error, successPage }) => {
                 </Col>
                 <Col md={22} xs={24}>
                   <Form.Item
-                    label="What is your level of experience in said subject?"
+                    label="What is your level of experience in said tech_stack?"
                     tooltip={{
                       title: 'Choose your current skill level',
                       icon: <InfoCircleOutlined />,

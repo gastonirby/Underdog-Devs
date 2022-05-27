@@ -39,8 +39,7 @@ const initialFormValues = {
   country: '',
   current_company: '',
   current_position: '',
-  subject: '',
-  experience_level: '',
+  tech_stack: 'React',
   job_help: false,
   industry_knowledge: false,
   pair_programming: false,
@@ -74,6 +73,8 @@ const Mentor = ({ dispatch, error, successPage }) => {
   const formSubmit = () => {
     dispatch(postNewMentorAccount(formValues));
   };
+
+  console.log('first commit to branch');
 
   return (
     <div>
@@ -294,11 +295,11 @@ const Mentor = ({ dispatch, error, successPage }) => {
                       title: 'What development role have you trained for?',
                       icon: <InfoCircleOutlined />,
                     }}
-                    name="subject"
+                    name="tech_stack"
                     rules={[
                       {
                         required: true,
-                        message: 'Tech stack is required.',
+                        message: 'Selecting a role is required',
                       },
                     ]}
                   >
@@ -315,6 +316,7 @@ const Mentor = ({ dispatch, error, successPage }) => {
                         value="Career Development"
                         onChange={e => handleChange(e, 'checkbox')}
                         style={{ margin: '.2rem', width: '100%' }}
+                        name="tech_stack"
                       >
                         Career Development
                       </Checkbox>
@@ -322,6 +324,7 @@ const Mentor = ({ dispatch, error, successPage }) => {
                         value="Frontend"
                         onChange={e => handleChange(e, 'checkbox')}
                         style={{ margin: '.2rem', width: '100%' }}
+                        name="tech_stack"
                       >
                         Frontend
                       </Checkbox>
@@ -329,6 +332,7 @@ const Mentor = ({ dispatch, error, successPage }) => {
                         value="Backend"
                         onChange={e => handleChange(e, 'checkbox')}
                         style={{ margin: '.2rem', width: '100%' }}
+                        name="tech_stack"
                       >
                         Backend
                       </Checkbox>
@@ -336,6 +340,7 @@ const Mentor = ({ dispatch, error, successPage }) => {
                         value="Design UI/UX"
                         onChange={e => handleChange(e, 'checkbox')}
                         style={{ margin: '.2rem', width: '100%' }}
+                        name="tech_stack"
                       >
                         Design UI/UX
                       </Checkbox>
@@ -343,6 +348,7 @@ const Mentor = ({ dispatch, error, successPage }) => {
                         value="iOS"
                         onChange={e => handleChange(e, 'checkbox')}
                         style={{ margin: '.2rem', width: '100%' }}
+                        name="tech_stack"
                       >
                         iOS
                       </Checkbox>
@@ -350,6 +356,7 @@ const Mentor = ({ dispatch, error, successPage }) => {
                         value="Android"
                         onChange={e => handleChange(e, 'checkbox')}
                         style={{ margin: '.2rem', width: '100%' }}
+                        name="tech_stack"
                       >
                         Android
                       </Checkbox>
@@ -357,6 +364,7 @@ const Mentor = ({ dispatch, error, successPage }) => {
                         value="Data Science"
                         onChange={e => handleChange(e, 'checkbox')}
                         style={{ margin: '.2rem', width: '100%' }}
+                        name="tech_stack"
                       >
                         Data Science
                       </Checkbox>
@@ -371,6 +379,7 @@ const Mentor = ({ dispatch, error, successPage }) => {
                       title: 'Select all that apply',
                       icon: <InfoCircleOutlined />,
                     }}
+                    //no value in the database with name "contribute"
                     name="contribute"
                     rules={[
                       {
@@ -392,6 +401,7 @@ const Mentor = ({ dispatch, error, successPage }) => {
                         value="job_help"
                         onChange={e => handleChange(e, 'checkbox')}
                         style={{ margin: '.2rem', width: '100%' }}
+                        name="job_help"
                       >
                         Job Search Help
                       </Checkbox>
@@ -399,6 +409,7 @@ const Mentor = ({ dispatch, error, successPage }) => {
                         value="industry_knowledge"
                         onChange={e => handleChange(e, 'checkbox')}
                         style={{ margin: '.2rem', width: '100%' }}
+                        name="industry_knowledge"
                       >
                         Tech Industry Coaching
                       </Checkbox>
@@ -406,6 +417,7 @@ const Mentor = ({ dispatch, error, successPage }) => {
                         value="pair_programming"
                         onChange={e => handleChange(e, 'checkbox')}
                         style={{ margin: '.2rem', width: '100%' }}
+                        name="pair_programming"
                       >
                         Pair Programming / Coding Practice
                       </Checkbox>
@@ -435,6 +447,7 @@ const Mentor = ({ dispatch, error, successPage }) => {
                     ]}
                   >
                     <Radio.Group
+                      //no name in database schema named commitment
                       name="commitment"
                       onChange={handleChange}
                       value={formValues.commitment}
